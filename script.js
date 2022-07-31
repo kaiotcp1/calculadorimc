@@ -19,7 +19,10 @@ function calcular() {
     bValid = altura.match(regEx);
     if (bValid) {
 
-        if (calculo >= 18.5 && calculo < 24.9) {
+        if(calculo <= 18.4) {
+            resultado.innerHTML = '<p> Seu IMC é ' + calculo.toFixed(1) + ' sua condição é abaixo do peso' + '</p>'
+
+        } else if (calculo >= 18.5 && calculo < 24.9) {
             resultado.innerHTML = '<p> Seu IMC é ' + calculo.toFixed(1) + ' sua condição é normal' + '</p>'
 
         } else if (calculo >= 25.0 && calculo < 29.9) {
@@ -29,11 +32,11 @@ function calcular() {
             resultado.innerHTML = '<p> Seu IMC é ' + calculo.toFixed(1) + ' sua condição é obesidade' + '</p>'
 
         } else {
-            resultado.innerHTML = '<p> Seu IMC é ' + calculo.toFixed(1) + ' sua condição é obesidade grave' + '</p>'
+            resultado.innerHTML = '<p> Seu IMC é ' + calculo.toFixed(1) + ' sua condição é obesidade grave ou Morbida' + '</p>'
         }
     }
     else {
-        resultado.innerHTML = '<p> Digite seu Peso e altura!!!</p>'
+        resultado.innerHTML = '<p> Digite seu Peso e altura !!!</p>'
     }
 
 }
